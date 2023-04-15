@@ -1,7 +1,7 @@
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 import '../../../../../constants.dart';
 
@@ -18,7 +18,14 @@ class SplashViewBody extends StatelessWidget {
           AssetsData.logo,
           fit: BoxFit.cover,
         ),
-        Text("Welcome to ")
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          "Read free Books",
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.headline5,
+        ),
       ],
     );
   }

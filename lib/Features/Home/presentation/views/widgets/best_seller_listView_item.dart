@@ -13,9 +13,9 @@ class BestSellerListViewItem extends StatelessWidget {
       child: Row(
         // mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          const BestSellerListViewItemImage(),
-          const BestSellerListViewItemInformation(),
+        children: const [
+          BestSellerListViewItemImage(),
+          BestSellerListViewItemInformation(),
         ],
       ),
     );

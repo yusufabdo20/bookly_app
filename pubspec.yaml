@@ -33,7 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.4.0
-  get: ^4.6.5
+  go_router: ^6.5.7
   google_fonts: ^4.0.3
 
 dev_dependencies:

@@ -1,8 +1,9 @@
+import 'package:bookly_app/core/utils/app_routing.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../constants.dart';
 import '../../../../Home/presentation/views/homeView.dart';
@@ -41,7 +42,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
           padding: const EdgeInsets.all(20.0),
           child: Image.asset(
             AssetsData.logo,
-            
             fit: BoxFit.cover,
           ),
         ),
@@ -67,9 +67,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToScreen({required Widget screen}) {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.to(() => screen,
-          transition: Transition.circularReveal,
-          duration: kTransactionDuration);
+      // Get.to(() => screen,
+      //     transition: Transition.circularReveal,
+      //     duration: kTransactionDuration);
+      GoRouter.of(context).push(
+        AppRouters.kHomeView,
+      );
     });
   }
 }

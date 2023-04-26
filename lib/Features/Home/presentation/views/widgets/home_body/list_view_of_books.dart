@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'custom_listView_item.dart';
+import 'custom_book_image.dart';
 
 class ListViewOfBooks extends StatelessWidget {
   const ListViewOfBooks({super.key});
@@ -12,7 +12,7 @@ class ListViewOfBooks extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const CustomListViewItem();
+          return const CustomBookImage();
         },
         // itemCount: 10,
       ),

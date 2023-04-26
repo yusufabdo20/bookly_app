@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/utils/assets.dart';
 
-class CustomListViewItem extends StatelessWidget {
-  const CustomListViewItem({
+class CustomBookImage extends StatelessWidget {
+  const CustomBookImage({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 150,
+      width: 180,
       child: AspectRatio(
-        aspectRatio: .50,
+        aspectRatio: .65,
         child: Container(
           margin: const EdgeInsets.symmetric(horizontal: 10),
           // width: 150,

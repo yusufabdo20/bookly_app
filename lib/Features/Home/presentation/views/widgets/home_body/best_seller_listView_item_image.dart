@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../../../core/utils/assets.dart';
 
-class BestSellerListViewItemImage extends StatelessWidget {
-  const BestSellerListViewItemImage({
+class BookListViewItemImage extends StatelessWidget {
+  const BookListViewItemImage({
     Key? key,
   }) : super(key: key);
 

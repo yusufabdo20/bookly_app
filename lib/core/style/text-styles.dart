@@ -7,4 +7,4 @@ abstract class TextStyles {
 
 }
 // TextStyle(
-      // fontFamily: "Raleway", fontWeight: FontWeight.bold, fontSize: 25);
+// fontFamily: "Raleway", fontWeight: FontWeight.bold, fontSize: 25);

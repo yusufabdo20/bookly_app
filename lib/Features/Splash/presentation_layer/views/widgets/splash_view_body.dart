@@ -2,10 +2,8 @@ import 'package:bookly_app/core/utils/app_routing.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../constants.dart';
 import '../../../../Home/presentation/views/homeView.dart';
 import 'sliding_text.dart';
 

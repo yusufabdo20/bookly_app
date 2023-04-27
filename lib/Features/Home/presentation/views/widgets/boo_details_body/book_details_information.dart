@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../home_body/book_rating.dart';
@@ -11,7 +10,6 @@ class BookDetailsInformationSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      
       children: const [
         Text(
           "The Jungle Book ",
@@ -25,9 +23,7 @@ class BookDetailsInformationSection extends StatelessWidget {
         Text(
           "The Jungle Book ",
           style: TextStyle(
-              fontSize: 18,
-              color: Colors.grey,
-              fontStyle: FontStyle.italic),
+              fontSize: 18, color: Colors.grey, fontStyle: FontStyle.italic),
         ),
         SizedBox(
           height: 30,

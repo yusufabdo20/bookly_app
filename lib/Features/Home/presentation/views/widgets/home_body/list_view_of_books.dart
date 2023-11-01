@@ -9,12 +9,16 @@ class ListViewOfBooks extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * .25,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return const CustomBookImage();
-        },
-        // itemCount: 10,
+      child: Container(
+        margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
+        child: ListView.builder(
+          physics: BouncingScrollPhysics(),
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return const CustomBookImage();
+          },
+          // itemCount: 10,
+        ),
       ),
     );
   }

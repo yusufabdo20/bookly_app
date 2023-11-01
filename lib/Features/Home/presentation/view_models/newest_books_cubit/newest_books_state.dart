@@ -1,10 +1,22 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 part of 'newest_books_cubit.dart';
 
-sealed class NewestBooksState extends Equatable {
+abstract class NewestBooksState extends Equatable {
   const NewestBooksState();
 
   @override
   List<Object> get props => [];
 }
 
-final class NewestBooksInitial extends NewestBooksState {}
+class NewestBooksInitialState extends NewestBooksState {}
+
+class NewestBooksSuccessState extends NewestBooksState {}
+
+class NewestBooksErrorState extends NewestBooksState {
+  final String error;
+  NewestBooksErrorState({
+    required this.error,
+  });
+}
+
+class NewestBooksLoadingState extends NewestBooksState {}

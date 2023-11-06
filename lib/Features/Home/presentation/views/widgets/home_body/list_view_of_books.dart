@@ -24,10 +24,9 @@ class ListViewOfBooks extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return CustomBookImage(
-                    image: featuredCubit.bookModels[index].volumeInfo
-                            ?.imageLinks?.thumbnail ??
-                        'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg',
-                  );
+                      image: featuredCubit.bookModels[index].volumeInfo
+                              ?.imageLinks?.thumbnail ??
+                          "https://as2.ftcdn.net/v2/jpg/04/70/29/97/1000_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg");
                 },
                 // itemCount: 10,
               ),
@@ -37,8 +36,8 @@ class ListViewOfBooks extends StatelessWidget {
           return CustomErrorWidget(errMsg: state.e);
         } else {
           return Center(
-            child: CircularProgressIndicator(),
-          );
+              child:
+                  Image.asset("assets/images/Animation - 1699310838447.gif"));
         }
       },
     );

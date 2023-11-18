@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../home_body/book_rating.dart';
-
 class BookDetailsInformationSection extends StatelessWidget {
   const BookDetailsInformationSection({
     Key? key,
@@ -28,7 +26,7 @@ class BookDetailsInformationSection extends StatelessWidget {
         SizedBox(
           height: 30,
         ),
-        BookRating(),
+        // BookRating(ratting: bookModel),
       ],
     );
   }

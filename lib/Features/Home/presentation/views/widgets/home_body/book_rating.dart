@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({
+  BookRating({
     Key? key,
+    required this.ratting,
+    required this.ratingsCount,
   }) : super(key: key);
-
+  int ratting;
+  int ratingsCount;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -19,8 +22,8 @@ class BookRating extends StatelessWidget {
         const SizedBox(
           width: 10,
         ),
-        const Text(
-          "4.8",
+        Text(
+          ratting.toString(),
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -29,8 +32,8 @@ class BookRating extends StatelessWidget {
         const SizedBox(
           width: 10,
         ),
-        const Text(
-          "(2390)",
+        Text(
+          "( $ratingsCount )",
           style: TextStyle(
             fontSize: 18,
             color: Colors.grey,

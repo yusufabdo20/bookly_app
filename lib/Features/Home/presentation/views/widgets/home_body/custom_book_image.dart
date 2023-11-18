@@ -14,11 +14,11 @@ class CustomBookImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height * .30,
-      margin: EdgeInsets.all(10),
+      height: MediaQuery.of(context).size.height * .25,
+      margin: EdgeInsets.only(right: 20),
       width: 150,
       child: AspectRatio(
-          aspectRatio: .65,
+          aspectRatio: .70,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: CachedNetworkImage(
@@ -28,7 +28,7 @@ class CustomBookImage extends StatelessWidget {
               errorWidget: (context, url, error) {
                 return const Icon(Icons.error);
               },
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
               imageUrl: image,
             ),
           )

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bookly_app/Features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/Home/data/repos/home_repo.dart';
 import 'package:bookly_app/core/errors/failures.dart';
@@ -19,8 +21,13 @@ class HomeRepoImplementation implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      print(e);
-      // Handle any other exceptions that might occur during the API call
+      log(e.toString());
+      // return left(
+      //   ServerError(
+      //     e.toString(),
+      //   ),
+      // );
+      //    Handle any other exceptions that might occur during the API call
       if (e is DioException) {
         return left(ServerError.fromDioError(e));
       } else {

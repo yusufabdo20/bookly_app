@@ -35,9 +35,7 @@ class ListViewOfBooks extends StatelessWidget {
         } else if (state is FeaturedBooksErrorState) {
           return CustomErrorWidget(errMsg: state.e);
         } else {
-          return Center(
-              child:
-                  Image.asset("assets/images/Animation - 1699310838447.gif"));
+          return const Center(child: CircularProgressIndicator());
         }
       },
     );

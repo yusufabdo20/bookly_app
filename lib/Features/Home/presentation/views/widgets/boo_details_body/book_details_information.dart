@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../../../../data/models/book_model/book_model.dart';
+
 class BookDetailsInformationSection extends StatelessWidget {
   const BookDetailsInformationSection({
     Key? key,
+    required this.bookModel,
   }) : super(key: key);
-
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
+      children: [
         Text(
-          "The Jungle Book ",
+          bookModel.volumeInfo?.title ?? "No title available",
           style: TextStyle(
             fontSize: 30,
           ),
@@ -19,7 +22,7 @@ class BookDetailsInformationSection extends StatelessWidget {
           height: 6,
         ),
         Text(
-          "The Jungle Book ",
+          bookModel.volumeInfo?.authors![0] ?? "No Author available",
           style: TextStyle(
               fontSize: 18, color: Colors.grey, fontStyle: FontStyle.italic),
         ),

@@ -13,13 +13,15 @@ import 'customAppBarBookDetails.dart';
 class BookDetailsBody extends StatelessWidget {
   const BookDetailsBody({
     super.key,
-    // required this.bookModel,
+    required this.bookModel,
   });
-  // BookModel bookModel;
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     var newestCubit = NewestBooksCubit.get(context);
+
     var width = MediaQuery.of(context).size.width;
+    var height = MediaQuery.of(context).size.height;
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(builder: (
       context,
       state,
@@ -37,18 +39,18 @@ class BookDetailsBody extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: width * 0.17),
                       child: CustomBookImage(
-                          image:
-                              'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg'),
+                          image: bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                              "https://as2.ftcdn.net/v2/jpg/04/70/29/97/1000_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg"),
                     ),
-                    const SizedBox(
-                      height: 40,
+                    SizedBox(
+                      height: height * .01,
                     ),
-                    const BookDetailsInformationSection(),
-                    const SizedBox(
-                      height: 30,
+                    BookDetailsInformationSection(bookModel: bookModel),
+                    SizedBox(
+                      height: height * .01,
                     ),
-                    const BookAction(),
-                    const SizedBox(
+                    BookAction(),
+                    SizedBox(
                       height: 30,
                     ),
                     const Align(
@@ -58,10 +60,12 @@ class BookDetailsBody extends StatelessWidget {
                         style: TextStyle(fontSize: 20),
                       ),
                     ),
-                    const SizedBox(
-                      height: 25,
+                    SizedBox(
+                      height: height * .01,
                     ),
-                    const SimilarBooksListView()
+                    SimilarBooksListView(
+                      bookModel: bookModel,
+                    )
                   ],
                 ),
               ),

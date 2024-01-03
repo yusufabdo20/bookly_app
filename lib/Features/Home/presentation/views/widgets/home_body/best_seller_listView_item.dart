@@ -4,17 +4,19 @@ import 'package:bookly_app/core/utils/app_routing.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'best_seller_listView_item_image.dart';
 import 'best_seller_listView_item_information.dart';
 
 class BookListViewItem extends StatelessWidget {
-  BookListViewItem({super.key, required this.bookModel});
-  BookModel bookModel;
+  const BookListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouters.kBookDetailsView);
+        GoRouter.of(context)
+            .push(AppRouters.kBookDetailsView, extra: bookModel);
+        // GoRouter.of(context).pushNamed("/bookDetailsView",
+        //     queryParams: {'bookModel': bookModel});
       },
       child: Container(
         margin: const EdgeInsets.symmetric(vertical: 10),

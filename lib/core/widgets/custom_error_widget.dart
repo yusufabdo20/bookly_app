@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomErrorWidget extends StatelessWidget {
-  CustomErrorWidget({
+  const CustomErrorWidget({
     super.key,
     required this.errMsg,
   });
@@ -11,10 +11,11 @@ class CustomErrorWidget extends StatelessWidget {
     return Center(
       child: Text(
         errMsg,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 20,
           color: Colors.red,
         ),
+        textAlign: TextAlign.center,
       ),
     );
   }

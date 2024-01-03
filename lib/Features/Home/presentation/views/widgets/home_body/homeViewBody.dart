@@ -9,7 +9,7 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: CustomScrollView(
         slivers: [
           SliverToBoxAdapter(
@@ -23,7 +23,7 @@ class HomeViewBody extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
-                "Best Seller",
+                "Newest books",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
             ),

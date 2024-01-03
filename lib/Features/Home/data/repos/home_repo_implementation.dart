@@ -10,11 +10,13 @@ import 'package:dio/dio.dart';
 class HomeRepoImplementation implements HomeRepo {
   ApiService apiService;
   HomeRepoImplementation(this.apiService);
+
+  @override
   Future<Either<Failures, List<BookModel>>> fetchNewstBooks() async {
     try {
       var data = await apiService.get(
-          endPoint: 'volumes?free-ebooks&q=subject:computer');
-
+          endPoint: 'volumes?Sorting=newest &q=subject:software');
+//https://www.googleapis.com/books/v1/volumes?Sorting=newest &q=everything
       List<BookModel> books = [];
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
@@ -22,11 +24,6 @@ class HomeRepoImplementation implements HomeRepo {
       return right(books);
     } catch (e) {
       log(e.toString());
-      // return left(
-      //   ServerError(
-      //     e.toString(),
-      //   ),
-      // );
       //    Handle any other exceptions that might occur during the API call
       if (e is DioException) {
         return left(ServerError.fromDioError(e));
@@ -52,7 +49,34 @@ class HomeRepoImplementation implements HomeRepo {
       }
       return right(books);
     } catch (e) {
-      print(e);
+      log(e.toString());
+      // Handle any other exceptions that might occur during the API call
+      if (e is DioException) {
+        return left(ServerError.fromDioError(e));
+      } else {
+        return left(
+          ServerError(
+            e.toString(),
+          ),
+        );
+      }
+    }
+  }
+
+  @override
+  Future<Either<Failures, List<BookModel>>> fetchSimilerBooks(
+      {required String category}) async {
+    try {
+      var data = await apiService.get(
+          endPoint: 'volumes?Sorting=relevance&q=subject:computer');
+
+      List<BookModel> books = [];
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      log(e.toString());
       // Handle any other exceptions that might occur during the API call
       if (e is DioException) {
         return left(ServerError.fromDioError(e));

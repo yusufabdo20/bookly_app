@@ -22,13 +22,14 @@ class CustomBookImage extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: CachedNetworkImage(
-              imageUrl: image,
               placeholder: (context, url) => Center(
-                  child: const Center(child: CircularProgressIndicator())),
-              errorWidget: (context, url, error) => Image.asset(
-                "assets/images/bookIconnn.png",
-              ),
+                  child: Image.asset(
+                      "assets/images/Animation - 1699310838447.gif")),
+              errorWidget: (context, url, error) {
+                return const Icon(Icons.error);
+              },
               fit: BoxFit.cover,
+              imageUrl: image,
             ),
           )
 

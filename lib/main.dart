@@ -1,6 +1,7 @@
 import 'package:bookly_app/Features/Home/data/repos/home_repo_implementation.dart';
 import 'package:bookly_app/Features/Home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly_app/Features/Home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
+import 'package:bookly_app/Features/Home/presentation/view_models/similer_books_cubit/cubit/similer_books_cubit.dart';
 import 'package:bookly_app/core/utils/api_service.dart';
 import 'package:bookly_app/core/utils/app_routing.dart';
 import 'package:bookly_app/core/utils/service_locator.dart';
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
             getIt.get<HomeRepoImplementation>(),
           )..feachFeaturedBooks(),
         ),
+        
       ],
       child: MaterialApp.router(
         routerConfig: AppRouters.router,
